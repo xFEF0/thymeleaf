@@ -4,7 +4,6 @@ import com.xfef0.thymeleaf.domain.Product;
 import com.xfef0.thymeleaf.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ProductController {
 
-    private final ProductService productService;
+    private ProductService productService;
 
     @Autowired
-    public ProductController(ProductService productService) {
+    public void setProductService(ProductService productService) {
         this.productService = productService;
     }
 
@@ -34,7 +33,7 @@ public class ProductController {
 
     @RequestMapping("product/{id}")
     public String showProduct(@PathVariable Integer id, Model model) {
-        model.addAttribute("product", productService.getProductById(id));
+        model.addAttribute("product", productService.getProductById(id).get()   );
         return "productshow";
     }
 

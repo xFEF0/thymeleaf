@@ -3,9 +3,11 @@ package com.xfef0.thymeleaf.services;
 import com.xfef0.thymeleaf.domain.Product;
 import com.xfef0.thymeleaf.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;

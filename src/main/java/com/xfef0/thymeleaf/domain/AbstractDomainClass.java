@@ -3,11 +3,13 @@ package com.xfef0.thymeleaf.domain;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Version;
 import java.util.Date;
 
+@MappedSuperclass
 public class AbstractDomainClass implements DomainObject {
 
     @Id

@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Profile("springdatajpa")
 public class RoleServiceImpl implements RoleService {
 
     private RoleRepository roleRepository;
